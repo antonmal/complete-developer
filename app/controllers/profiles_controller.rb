@@ -15,9 +15,14 @@ class ProfilesController < ApplicationController
           flash[:success] = "Profile Updated!"
           redirect_to user_path( params[:user_id] )
         else
-          flash[:error] = "Error saving new profile"
+          flash[:error] = "Error saving profile"
           render action: :new
         end
+    end
+    
+    def edit
+        @user = User.find( params[:user_id] )
+        @profile = @user.profile
     end
     
 private
