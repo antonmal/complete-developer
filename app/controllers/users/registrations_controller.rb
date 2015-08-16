@@ -15,6 +15,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
   
+  def destroy
+    
+  end
+  
   private
   def select_plan
     unless params[:plan] && (params[:plan] == '1' || params[:plan] == '2')
